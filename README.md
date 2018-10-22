@@ -1,5 +1,7 @@
 # Soccer game time chatbot app (IN DEVELOPMENT)
 
+Back-end Laravel repo: https://github.com/nothingtoocrazy/chatbot-api
+
 ## Front-end Stack
 - Angular 6 (Typescript) - [integration guide](https://github.com/toni-rmc/laravel-angular-integration/blob/master/docs/angular/integration.md)
 - A styled components library... [Ant Design](https://ng.ant.design/docs/introduce/en) **OR** [PrimeNG](https://www.primefaces.org/primeng/#/)
