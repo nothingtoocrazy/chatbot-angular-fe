@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private leaguesData : Observable<object>;
+  leaguesData : Observable<object>;
   title = 'Soccer chatbot';
 
   constructor(private leaguesService: LeaguesService) { }

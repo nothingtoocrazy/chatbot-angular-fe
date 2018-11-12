@@ -11,7 +11,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 
 export class LeaguesService {
-  baseUrl:string = environment.api_base_url;
+  baseUrl : string = environment.api_base_url;
 
   constructor(
     private http: HttpClient,
