@@ -1,3 +1,4 @@
 <div *ngFor="let league of leagues | async">
+  {{ log(league) }}
   {{ league.competition_name }}
 </div>
