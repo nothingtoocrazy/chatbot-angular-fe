@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from "rxjs/operators";
 
 import { environment } from '../environments/environment';
 
@@ -10,12 +11,13 @@ const httpOptions = {
 
 @Injectable({ providedIn: 'root' })
 
-export class LeaguesService {
+export class SearchQueryService {
   baseUrl : string = environment.api_base_url;
+  matches : any[] = [];
 
   constructor(
     private http: HttpClient,
-    private leaguesService: LeaguesService
+    private searchQueryService: SearchQueryService
   ) { }
 
   getLeagues() {
@@ -25,5 +27,9 @@ export class LeaguesService {
       //   console.log(res);
       //   return res;
       // });
+  }
+  getMatches() {
+    console.log('in getMatches in search service');
+    return this.http.get(`${this.baseUrl}/matches`)
   }
 }

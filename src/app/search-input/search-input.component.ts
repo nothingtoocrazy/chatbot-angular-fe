@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SearchInputComponent implements OnInit {
 
-  @Output() getLeaguesData = new EventEmitter<string>();
+  @Output() searchQueryInput = new EventEmitter<string>();
 
   searchInput : string;
 
@@ -16,8 +16,8 @@ export class SearchInputComponent implements OnInit {
 
   log(val) { console.log(val); }
 
-  getLeagues() {
-    console.log('in child in getLeagues, emitting getLeaguesData');
-    this.getLeaguesData.emit(this.searchInput);
+  search() {
+    console.log('in child in searchQueryInput, emitting searchInput');
+    this.searchQueryInput.emit(this.searchInput);
   }
 }

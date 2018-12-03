@@ -1,7 +1,7 @@
 <div class="p-grid p-justify-center p-align-stretch vertical-container" style="height: 100vh;">
   <div class="p-col-6 p-col-align-center">
     <h1>{{ title }}</h1>
-    <app-search-input (getLeaguesData)="getLeagues($event)"></app-search-input>
-    <app-data-display [leagues]="leaguesData"></app-data-display>
+    <app-search-input (searchQueryInput)="search($event)"></app-search-input>
+    <app-data-display [leagues]="leaguesData" [matches]="matchesData"></app-data-display>
   </div>
 </div>
