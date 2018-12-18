@@ -3,6 +3,11 @@
   {{ league.competition_name }}
 </div>
 
+<div *ngFor="let team of (teams)">
+  {{ log(team) }}
+  {{ team.name }}
+</div>
+
 <p-table [value]="matches" sortField="competition_id" sortMode="single" (onSort)="onSort()" *ngIf="matches.length > 0" (sortFunction)="customSort($event)">
   <ng-template pTemplate="header">
     <tr>

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from "rxjs/operators";
 
 import { environment } from '../environments/environment';
 
@@ -13,7 +12,6 @@ const httpOptions = {
 
 export class SearchQueryService {
   baseUrl : string = environment.api_base_url;
-  matches : any[] = [];
 
   constructor(
     private http: HttpClient,
@@ -23,13 +21,13 @@ export class SearchQueryService {
   getLeagues() {
     console.log('in getLeagues in leagues service');
     return this.http.get(`${this.baseUrl}/league`)
-      // .subscribe((res:any[]) => {
-      //   console.log(res);
-      //   return res;
-      // });
   }
   getMatches() {
     console.log('in getMatches in search service');
     return this.http.get(`${this.baseUrl}/matches`)
+  }
+  getTeams() {
+    console.log('in getTeams in search service');
+    return this.http.get(`${this.baseUrl}/teams`)
   }
 }

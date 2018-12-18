@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { SearchQueryService } from './searchQuery.service';
 import { Matches } from './Classes/matches';
+import { Teams } from './Classes/teams';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { Matches } from './Classes/matches';
 export class AppComponent {
   leaguesData : any[] = [];
   matchesData : any[] = [];
+  teamsData : any[] = [];
   title = '';
 
   constructor(private searchQueryService: SearchQueryService) { }
@@ -18,6 +20,7 @@ export class AppComponent {
   public search($event) {
     console.log('in parent in search', this.leaguesData);
     console.log('in parent in search', this.matchesData);
+    console.log('in parent in search', this.teamsData);
     switch ($event) {
       case 'leagues':
         this.searchQueryService.getLeagues()
@@ -33,9 +36,17 @@ export class AppComponent {
             this.matchesData = res.matches;
           });
         break;
+      case 'teams':
+        this.searchQueryService.getTeams()
+          .subscribe((res : Teams) => {
+            console.log(res);
+            this.teamsData = res.teams;
+          });
+        break;
       default:
-        this.leaguesData = undefined;
-        this.matchesData = undefined;
+        this.leaguesData = [];
+        this.matchesData = [];
+        this.teamsData = [];
         break;
     }
   }

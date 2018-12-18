@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DataDisplayComponent implements OnInit {
   @Input() leagues : any[];
+  @Input() teams : any[];
   private _matches;
   // @Input() matches : any[];
 
