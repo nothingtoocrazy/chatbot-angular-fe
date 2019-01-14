@@ -22,7 +22,7 @@ export class AppComponent {
     console.log('in parent in search', this.matchesData);
     console.log('in parent in search', this.teamsData);
     switch ($event) {
-      case 'leagues':
+      case 'league':
         this.searchQueryService.getLeagues()
           .subscribe((res : any[]) => {
             console.log(res);
@@ -36,7 +36,7 @@ export class AppComponent {
             this.matchesData = res.matches;
           });
         break;
-      case 'teams':
+      case 'team':
         this.searchQueryService.getTeams()
           .subscribe((res : Teams) => {
             console.log(res);

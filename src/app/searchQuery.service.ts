@@ -24,10 +24,10 @@ export class SearchQueryService {
   }
   getMatches() {
     console.log('in getMatches in search service');
-    return this.http.get(`${this.baseUrl}/matches`)
+    return this.http.get(`${this.baseUrl}/match`)
   }
   getTeams() {
     console.log('in getTeams in search service');
-    return this.http.get(`${this.baseUrl}/teams`)
+    return this.http.get(`${this.baseUrl}/team`)
   }
 }
